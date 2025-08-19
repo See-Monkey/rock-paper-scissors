@@ -1,4 +1,5 @@
 function getComputerChoice() {
+    console.log("");
     let random = Math.floor(Math.random() * 3);
     if (random == 0) {
         console.log("The computer chooses rock.");
@@ -40,12 +41,20 @@ function playGame() {
     console.log("Let's play rock, paper, scissors against the computer.");
     console.log("First to win 3 rounds wins the game.");
 
+    while (humanScore < 3 && computerScore < 3) {
+        console.log(playRound(getHumanChoice(), getComputerChoice()));
+    }
 
+    if (humanScore == 3) {
+        return "You won! Good game!";
+    } else if (computerScore == 3) {
+        return "You lost... Better luck next time.";
+    } else {
+        return "error";
+    }
 }
 
 let humanScore = 0;
 let computerScore = 0;
 
-
-
-console.log(playRound(getHumanChoice(), getComputerChoice()));
+console.log(playGame());
