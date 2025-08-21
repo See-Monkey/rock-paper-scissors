@@ -117,6 +117,21 @@ body {
     border: 1px solid black;
     margin: 30px;
     background-color: gainsboro;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.img#computer {
+    color: darkred;
+}
+
+.img#human {
+    color: darkgreen;
+}
+
+img {
+    height: 125px;
+    width: 125px;
 }
 
 /* ========== choice buttons ========== */

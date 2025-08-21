@@ -27,6 +27,10 @@ function initialize() {
     btnPaper.style.display = "inline";
     btnScissors.style.display = "inline";
     btnReset.style.display = "none";
+
+    //images
+    changeImg("computer", "empty");
+    changeImg("human", "empty");
 }
 
 function gameOver(winner) {
@@ -46,12 +50,15 @@ function getComputerChoice() {
     let random = Math.floor(Math.random() * 3);
     if (random == 0) {
         console.log("The computer chooses rock.");
+        changeImg("computer", "rock");
         return "rock";
     } else if (random == 1) {
         console.log("The computer chooses paper.");
+        changeImg("computer", "paper");
         return "paper";
     } else if (random == 2) {
         console.log("The computer chooses scissors.");
+        changeImg("computer", "scissors");
         return "scissors"
     } else {
         return "error"
@@ -88,7 +95,7 @@ function playRound(humanChoice, computerChoice) {
 
 function changeImg(player, choice) {
     let image = document.querySelector(`.img#${player} img`);
-    image.src = `./img/${choice}`;
+    image.src = `./img/${choice}.png`;
 }
 
 initialize();
@@ -101,12 +108,15 @@ buttons.addEventListener("click", (e) => {
             initialize();
             break;
         case "rock":
+            changeImg("human", "rock");
             playRound("rock", getComputerChoice());
             break;
         case "paper":
+            changeImg("human", "paper");
             playRound("paper", getComputerChoice());
             break;
         case "scissors":
+            changeImg("human", "scissors");
             playRound("scissors", getComputerChoice());
             break;
     }
