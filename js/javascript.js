@@ -86,6 +86,11 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
+function changeImg(player, choice) {
+    let image = document.querySelector(`.img#${player} img`);
+    image.src = `./img/${choice}`;
+}
+
 initialize();
 
 buttons.addEventListener("click", (e) => {
