@@ -9,7 +9,7 @@ const btnRock = document.querySelector("button#rock");
 const btnPaper = document.querySelector("button#paper");
 const btnScissors = document.querySelector("button#scissors");
 const btnReset = document.querySelector("button#reset");
-const button = document.querySelector("button");
+const buttons = document.querySelector(".choices");
 
 function initialize() {
     //scores
@@ -60,22 +60,50 @@ function getComputerChoice() {
 
 function playRound(humanChoice, computerChoice) {
     if (humanChoice == computerChoice) {
-        return `You both chose ${humanChoice}, try again.`;
+        activeMsg.textContent = `You both chose ${humanChoice}, try again.`;
     } else if (humanChoice == "rock" && computerChoice == "paper" ||
             humanChoice == "paper" && computerChoice == "scissors" ||
             humanChoice == "scissors" && computerChoice == "rock") {    
         computerScore += 1;
-        return `You chose ${humanChoice}, you lose this round.`;
+        paraComputerScore.textContent = computerScore;
+        if (computerScore == 3) {
+            gameOver(false);
+        } else {
+        activeMsg.textContent = `The computer chose ${computerChoice}, you lose this round.`;
+        }
     } else if (humanChoice == "rock" && computerChoice == "scissors" ||
             humanChoice == "paper" && computerChoice == "rock" ||
             humanChoice == "scissors" && computerChoice == "paper") {
         humanScore += 1;
-        return `You chose ${humanChoice}, you win this round!`;
+        paraHumanScore.textContent = humanScore;
+        if (humanScore == 3) {
+            gameOver(true);
+        } else {
+        activeMsg.textContent = `The computer chose ${computerChoice}, you win this round!`;
+        }
     } else {
         return "error";
     }
 }
 
 initialize();
-gameOver(true);
+
+buttons.addEventListener("click", (e) => {
+    let target = e.target;
+
+    switch(target.id) {
+        case "reset":
+            initialize();
+            break;
+        case "rock":
+            playRound("rock", getComputerChoice());
+            break;
+        case "paper":
+            playRound("paper", getComputerChoice());
+            break;
+        case "scissors":
+            playRound("scissors", getComputerChoice());
+            break;
+    }
+});
 
