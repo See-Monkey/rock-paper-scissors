@@ -20,7 +20,7 @@ function initialize() {
 
     //active message
     activeMsg.textContent = "Let's play rock, paper, scissors. ";
-    activeMsg.textContent += "First to win 3 rounds wins the game.";
+    activeMsg.textContent += "First to win 5 rounds wins the game.";
 
     //buttons
     btnRock.style.display = "inline";
@@ -73,7 +73,7 @@ function playRound(humanChoice, computerChoice) {
             humanChoice == "scissors" && computerChoice == "rock") {    
         computerScore += 1;
         paraComputerScore.textContent = computerScore;
-        if (computerScore == 3) {
+        if (computerScore == 5) {
             gameOver(false);
         } else {
         activeMsg.textContent = `The computer chose ${computerChoice}, you lose this round.`;
@@ -83,7 +83,7 @@ function playRound(humanChoice, computerChoice) {
             humanChoice == "scissors" && computerChoice == "paper") {
         humanScore += 1;
         paraHumanScore.textContent = humanScore;
-        if (humanScore == 3) {
+        if (humanScore == 5) {
             gameOver(true);
         } else {
         activeMsg.textContent = `The computer chose ${computerChoice}, you win this round!`;
