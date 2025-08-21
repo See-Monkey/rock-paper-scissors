@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ============ container ============= */
+
+.container {
+    flex: 0 1 50%;
+    height: 800px;
+    width: 600px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 30px;
+}
+
+/* =========== score header =========== */
+
+.header {
+    flex: 0.5;
+    width: 95%;
+    display: flex;
+    margin: 16px;
+}
+
+.score {
+    margin: 8px;
+}
+
+.playerScore {
+    margin: 8px;
+    flex: 0;
+    margin-right: auto;
+}
+
+.computerScore {
+    margin: 8px;
+    flex: 0;
+}
+
+/* ========== active message ========== */
+
+.activeMsg {
+    flex: 1;
+    border: 1px solid black;
+    width: 80%;
+    align-content: center;
+    margin-bottom: 30px;
+}
+
+/* ========== choice images =========== */
+
+.img {
+    height: 150px;
+    width: 150px;
+    flex: 0 0 1;
+    align-content: center;
+    border: 1px solid black;
+    margin: 30px;
+}
+
+/* ========== choice buttons ========== */
+
+.choices {
+    flex: 1;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.choices button {
+    flex: 0 0 auto;
+    width: 150px;
+    height: 50px;
+}
