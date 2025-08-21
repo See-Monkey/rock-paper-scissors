@@ -1,3 +1,46 @@
+console.log("Hi, Mom!");
+let humanScore = 0;
+let computerScore = 0;
+
+const paraHumanScore = document.querySelector(".humanScore");
+const paraComputerScore = document.querySelector(".computerScore");
+const activeMsg = document.querySelector(".activeMsg");
+const btnRock = document.querySelector("button#rock");
+const btnPaper = document.querySelector("button#paper");
+const btnScissors = document.querySelector("button#scissors");
+const btnReset = document.querySelector("button#reset");
+const button = document.querySelector("button");
+
+function initialize() {
+    //scores
+    humanScore = 0;
+    computerScore = 0;
+    paraHumanScore.textContent = humanScore;
+    paraComputerScore.textContent = computerScore;
+
+    //active message
+    activeMsg.textContent = "Let's play rock, paper, scissors. ";
+    activeMsg.textContent += "First to win 3 rounds wins the game.";
+
+    //buttons
+    btnRock.style.display = "inline";
+    btnPaper.style.display = "inline";
+    btnScissors.style.display = "inline";
+    btnReset.style.display = "none";
+}
+
+function gameOver(winner) {
+    if (winner === true) {
+        activeMsg.textContent = "You won! Good game!";
+    } else {
+        activeMsg.textContent = "You lost... Better luck next time."
+    }
+    btnRock.style.display = "none";
+    btnPaper.style.display = "none";
+    btnScissors.style.display = "none";
+    btnReset.style.display = "inline";
+}
+
 function getComputerChoice() {
     console.log("");
     let random = Math.floor(Math.random() * 3);
@@ -13,10 +56,6 @@ function getComputerChoice() {
     } else {
         return "error"
     }
-}
-
-function getHumanChoice() {
-    return prompt("Choose rock, paper, or scissors.").toLowerCase();
 }
 
 function playRound(humanChoice, computerChoice) {
@@ -37,24 +76,6 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-function playGame() {
-    console.log("Let's play rock, paper, scissors against the computer.");
-    console.log("First to win 3 rounds wins the game.");
+initialize();
+gameOver(true);
 
-    while (humanScore < 3 && computerScore < 3) {
-        console.log(playRound(getHumanChoice(), getComputerChoice()));
-    }
-
-    if (humanScore == 3) {
-        return "You won! Good game!";
-    } else if (computerScore == 3) {
-        return "You lost... Better luck next time.";
-    } else {
-        return "error";
-    }
-}
-
-let humanScore = 0;
-let computerScore = 0;
-
-// console.log(playGame());

@@ -19,7 +19,7 @@ body {
 /* ============ container ============= */
 
 .container {
-    flex: 0 1 50%;
+    flex: 0 0 50%;
     height: 800px;
     width: 600px;
     text-align: center;
@@ -54,11 +54,11 @@ body {
     box-shadow: 3px 3px 6px;
 }
 
-.score#player {
+.score#human {
     background-color: darkgreen;
 }
 
-.playerScore {
+.humanScore {
     margin: 8px 0px;
     padding: 0px 10px;
     flex: 0;
@@ -146,4 +146,8 @@ body {
     background-color: darkslategray;
     color: gainsboro;
     border-color: silver;
+}
+
+.choices #reset {
+    display: none;
 }
