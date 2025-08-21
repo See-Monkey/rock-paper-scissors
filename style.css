@@ -30,6 +30,7 @@ body {
     border: 5px solid darkslategray;
     border-radius: 30px;
     background-color: slategray;
+    box-shadow: 5px 5px 10px;
 }
 
 /* =========== score header =========== */
@@ -50,6 +51,7 @@ body {
     font-weight: 400;
     font-size: 20px;
     color: silver;
+    box-shadow: 3px 3px 6px;
 }
 
 .score#player {
@@ -68,6 +70,7 @@ body {
     color: darkgreen;
     font-size: 26px;
     font-weight: bolder;
+    box-shadow: 3px 3px 6px silver;
 }
 
 .score#computer {
@@ -85,6 +88,7 @@ body {
     color: darkred;
     font-size: 26px;
     font-weight: bolder;
+    box-shadow: 3px 3px 6px silver;
 }
 
 /* ========== active message ========== */
@@ -135,5 +139,11 @@ body {
     font-weight: bold;
     font-size: 20px;
     color: darkslategray;
-    ali
+    box-shadow: 3px 3px 6px;
+}
+
+.choices button:hover {
+    background-color: darkslategray;
+    color: gainsboro;
+    border-color: silver;
 }
