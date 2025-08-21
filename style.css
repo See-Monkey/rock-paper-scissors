@@ -5,6 +5,10 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+html {
+    background-color: silver;
+}
+
 body {
     display: flex;
     height: 100vh;
@@ -23,8 +27,9 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid black;
+    border: 5px solid darkslategray;
     border-radius: 30px;
+    background-color: slategray;
 }
 
 /* =========== score header =========== */
@@ -34,31 +39,68 @@ body {
     width: 95%;
     display: flex;
     margin: 16px;
+    padding: 0px 20px;
 }
 
 .score {
-    margin: 8px;
+    margin: 8px 0px;
+    align-content: center;
+    padding: 8px;
+    border-bottom: 2px solid darkslategray;
+    font-weight: 400;
+    font-size: 20px;
+    color: silver;
+}
+
+.score#player {
+    background-color: darkgreen;
 }
 
 .playerScore {
-    margin: 8px;
+    margin: 8px 0px;
+    padding: 0px 10px;
     flex: 0;
     margin-right: auto;
+    align-content: center;
+    background-color: gainsboro;
+    border-bottom: 2px solid darkslategray;
+    border-right: 2px solid darkslategray;
+    color: darkgreen;
+    font-size: 26px;
+    font-weight: bolder;
+}
+
+.score#computer {
+    background-color: darkred;
 }
 
 .computerScore {
-    margin: 8px;
+    margin: 8px 0px;
+    padding: 0px 10px;
     flex: 0;
+    align-content: center;
+    background-color: gainsboro;
+    border-bottom: 2px solid darkslategray;
+    border-right: 2px solid darkslategray;
+    color: darkred;
+    font-size: 26px;
+    font-weight: bolder;
 }
 
 /* ========== active message ========== */
 
 .activeMsg {
     flex: 1;
-    border: 1px solid black;
+    border: 3px solid darkslategray;
+    border-radius: 16px;
     width: 80%;
     align-content: center;
     margin-bottom: 30px;
+    padding: 16px;
+    background-color: gainsboro;
+    color: darkslategray;
+    font-style: italic;
+    font-size: 18px;
 }
 
 /* ========== choice images =========== */
@@ -70,6 +112,7 @@ body {
     align-content: center;
     border: 1px solid black;
     margin: 30px;
+    background-color: gainsboro;
 }
 
 /* ========== choice buttons ========== */
@@ -85,4 +128,12 @@ body {
     flex: 0 0 auto;
     width: 150px;
     height: 50px;
+    margin: 10px;
+    border: 3px solid darkslategray;
+    border-radius: 10px;
+    background-color: silver;
+    font-weight: bold;
+    font-size: 20px;
+    color: darkslategray;
+    ali
 }
